@@ -2,7 +2,7 @@
 
 ## PyTorch → Thermodynamic Sampling Units for Medical NLP
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dmjdxb/TinyBoBERT-PBit-Training-Bridge)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dmjdxb/MLTSU-v0.1.0---Bridging-PyTorch-and-Thermodynamic-Computing)
 [![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/pytorch-2.0+-red.svg)](https://pytorch.org/)
 [![JAX](https://img.shields.io/badge/jax-0.4+-green.svg)](https://github.com/google/jax)
@@ -53,8 +53,8 @@ MLTSU bridges PyTorch deep learning with thermodynamic hardware, featuring **Tin
 
 ```bash
 # Clone the repository
-git clone https://github.com/dmjdxb/PyTorch-TSU-Interface.git
-cd PyTorch-TSU-Interface
+git clone https://github.com/dmjdxb/MLTSU-v0.1.0---Bridging-PyTorch-and-Thermodynamic-Computing.git
+cd MLTSU-v0.1.0---Bridging-PyTorch-and-Thermodynamic-Computing
 
 # Install dependencies
 pip install -r requirements.txt
@@ -391,11 +391,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 If you use TinyBioBERT or MLTSU in your research:
 
 ```bibtex
-@software{tinybiobert2024,
-  title = {TinyBioBERT: Energy-Efficient Medical NLP with P-bit Computing},
+@software{mltsu2024,
+  title = {MLTSU v0.1.0: Bridging PyTorch and Thermodynamic Computing},
   author = {Johnson, David},
   year = {2024},
-  url = {https://github.com/dmjdxb/TinyBoBERT-PBit-Training-Bridge}
+  url = {https://github.com/dmjdxb/MLTSU-v0.1.0---Bridging-PyTorch-and-Thermodynamic-Computing}
 }
 ```
 
@@ -411,7 +411,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 📞 Contact
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/dmjdxb/TinyBoBERT-PBit-Training-Bridge/issues)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/dmjdxb/MLTSU-v0.1.0---Bridging-PyTorch-and-Thermodynamic-Computing/issues)
 - **Author**: David Johnson
 
 ---

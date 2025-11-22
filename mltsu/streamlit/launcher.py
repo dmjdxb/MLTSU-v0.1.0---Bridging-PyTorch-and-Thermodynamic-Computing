@@ -181,7 +181,7 @@ st.sidebar.info("""
 - ✅ Documentation
 
 **Repository:**
-[GitHub: PyTorch-TSU-Interface](https://github.com/dmjdxb/PyTorch-TSU-Interface.git)
+[GitHub: MLTSU v0.1.0](https://github.com/dmjdxb/MLTSU-v0.1.0---Bridging-PyTorch-and-Thermodynamic-Computing)
 """)
 
 # Footer
