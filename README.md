@@ -97,23 +97,30 @@ MLTSU uses a revolutionary two-plane architecture:
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                  YOUR PYTORCH MODEL                  │
-│         (No changes needed to existing code!)        │
+│              YOUR PYTORCH MODEL                      │
+│   (Enhanced with P-bit components for TSU support)   │
+│   • PbitDropout replaces nn.Dropout                  │
+│   • ThermodynamicAttention replaces softmax          │
+│   • TSUBinaryLayer for binary operations             │
 └──────────────────────┬──────────────────────────────┘
                        │
                        ▼
 ┌─────────────────────────────────────────────────────┐
 │              TSUBackend Protocol                     │
 │          (Hardware-agnostic interface)               │
+│    • sample_ising() - Ising model sampling           │
+│    • sample_binary_layer() - Binary operations       │
+│    • sample_custom() - Custom energy functions       │
 └──────────────────────┬──────────────────────────────┘
                        │
          ┌─────────────┼─────────────┬──────────────┐
          ▼             ▼             ▼              ▼
     JAXTSUBackend  ExtropicBackend  PBitBackend  IsingBackend
-    (Today)        (Future)         (Future)      (Future)
+    (Implemented)  (Future)         (Future)      (Future)
          │             │             │              │
          ▼             ▼             ▼              ▼
     CPU/GPU       Extropic TSU   P-bit Chip    D-Wave/Fujitsu
+    Simulation    Hardware       UCSD/Others    Quantum Annealers
 ```
 
 ## 📚 Core Components
