@@ -20,12 +20,6 @@ MLTSU v0.1.0 - Bridging PyTorch and Thermodynamic Computing
 ### 2. Real-Time Performance Metrics ✅
 **Where:** Ising Playground sidebar
 
-#### Energy Comparison Display
-```
-⚡ Performance Metrics
-├── GPU Baseline:     22.7 kJ
-├── TSU Simulation:   0.02 J
-└── Energy Reduction: 1,135,000× (99.9999% less)
 ```
 
 **Features:**

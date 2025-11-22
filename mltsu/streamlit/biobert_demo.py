@@ -286,9 +286,13 @@ def main():
                 if show_energy:
                     st.header("⚡ Energy Consumption")
 
-                    # Estimate energy
-                    gpu_energy = elapsed_time * 100  # ~100W GPU
-                    pbit_energy = num_samples * len(tokens) * 1e-15 * 1e9  # nJ
+                    # Calculate actual and theoretical energy
+                    cpu_energy_actual = elapsed_time * 30  # ~30W CPU typical
+                    gpu_energy_theoretical = elapsed_time * 100  # ~100W GPU
+
+                    # Theoretical P-bit calculation (10 fJ per operation)
+                    total_operations = num_samples * len(tokens) * 1000  # Rough estimate
+                    pbit_energy_theoretical = total_operations * 1e-14  # 10 fJ per op
 
                     col_e1, col_e2, col_e3 = st.columns(3)
 
@@ -297,19 +301,43 @@ def main():
                             "Processing Time",
                             f"{elapsed_time:.3f} s"
                         )
+                        st.metric(
+                            "Actual (This CPU)",
+                            f"~{cpu_energy_actual:.1f} J",
+                            help="Energy your CPU is actually using"
+                        )
 
                     with col_e2:
                         st.metric(
-                            "GPU Energy (est.)",
-                            f"{gpu_energy:.1f} J"
+                            "GPU (if optimized)",
+                            f"~{gpu_energy_theoretical:.1f} J",
+                            help="What an optimized GPU would use"
+                        )
+                        st.metric(
+                            "Reduction vs CPU",
+                            f"~{cpu_energy_actual/gpu_energy_theoretical:.1f}×"
                         )
 
                     with col_e3:
                         st.metric(
-                            "P-bit Energy (sim.)",
-                            f"{pbit_energy:.3f} nJ",
-                            delta=f"-{(1 - pbit_energy*1e-9/gpu_energy)*100:.1f}%"
+                            "P-bit (theoretical)",
+                            f"{pbit_energy_theoretical:.2e} J",
+                            help="IF hardware existed: 10 fJ per op"
                         )
+                        advantage = cpu_energy_actual / pbit_energy_theoretical if pbit_energy_theoretical > 0 else 0
+                        st.metric(
+                            "Projected Advantage",
+                            f"{advantage:.2e}×",
+                            help="CPU actual vs P-bit theoretical"
+                        )
+
+                    st.warning("""
+                    ⚠️ **Important Note**:
+                    • Comparing actual CPU energy to theoretical P-bit projections
+                    • P-bit hardware doesn't exist yet - these are research estimates
+                    • Based on 10 fJ per operation (Camsari et al., PRX 2017)
+                    • Requires specialized algorithms and approximate solutions
+                    """)
 
             else:
                 st.warning("Please enter some medical text to analyze.")

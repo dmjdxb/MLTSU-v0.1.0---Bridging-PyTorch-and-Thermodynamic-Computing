@@ -73,18 +73,25 @@ def get_backend(method="gibbs", seed=42):
         return None
     return JAXTSUBackend(seed=seed, sampling_method=method)
 
-# Performance Metrics Section
-st.sidebar.header("⚡ Performance Metrics")
+# Theoretical Projections Section (More Honest)
+st.sidebar.header("📊 Theoretical Projections")
+st.sidebar.info("**If TSU hardware existed:**")
+
 col1, col2 = st.sidebar.columns(2)
 with col1:
-    st.sidebar.metric("GPU Baseline", "22.7 kJ", help="Energy for equivalent GPU computation")
+    st.sidebar.metric("Est. GPU Energy", "~20-30 kJ",
+                      help="Estimated energy for equivalent GPU computation")
 with col2:
-    st.sidebar.metric("TSU Simulation", "0.02 J", help="Energy for TSU-based sampling")
+    st.sidebar.metric("Projected TSU", "~0.01-0.1 J",
+                      help="Theoretical TSU energy consumption based on p-bit research")
 
-st.sidebar.metric("Energy Reduction", "1,135,000×", delta="99.9999% less energy",
-                  help="Theoretical reduction with real TSU hardware")
+st.sidebar.metric("Potential Reduction", "100-1000×",
+                  help="Possible energy savings (highly speculative)")
 
-st.sidebar.caption("*Simulated values - real hardware pending")
+st.sidebar.warning("⚠️ **Note**: This is a CPU/GPU simulation, not TSU hardware. "
+                   "Actual energy consumption is whatever your computer uses.")
+st.sidebar.caption("Real TSU/p-bit hardware doesn't exist yet - these are research projections "
+                   "based on theoretical physics papers.")
 st.sidebar.markdown("---")
 
 # Sidebar controls
