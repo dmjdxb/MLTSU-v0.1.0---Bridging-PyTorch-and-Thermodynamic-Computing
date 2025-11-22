@@ -9,9 +9,30 @@ from .tiny_thermo_lm import (
     create_tiny_thermo_lm,
 )
 
+from .tiny_biobert import (
+    TinyBioBERT,
+    TinyBioBERTConfig,
+    TinyBioBERTForTokenClassification,
+    TinyBioBERTForSequenceClassification,
+    BERTEmbedding,
+    PbitDropout,
+    PbitAttention,
+    create_tiny_biobert,
+)
+
 __all__ = [
+    # TinyThermoLM
     'TinyThermoLM',
     'ThermodynamicEmbedding',
     'ThermodynamicTransformerBlock',
     'create_tiny_thermo_lm',
+    # TinyBioBERT
+    'TinyBioBERT',
+    'TinyBioBERTConfig',
+    'TinyBioBERTForTokenClassification',
+    'TinyBioBERTForSequenceClassification',
+    'BERTEmbedding',
+    'PbitDropout',
+    'PbitAttention',
+    'create_tiny_biobert',
 ]

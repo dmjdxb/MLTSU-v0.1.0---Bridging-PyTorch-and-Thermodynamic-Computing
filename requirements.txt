@@ -20,5 +20,13 @@ mypy>=1.3.0
 jupyter>=1.0.0
 ipykernel>=6.22.0
 
+# Medical NLP and TinyBioBERT dependencies
+transformers>=4.30.0  # For BioBERT tokenizer
+datasets>=2.12.0      # For medical NER datasets
+scikit-learn>=1.3.0   # For metrics and calibration
+wandb>=0.15.0         # For experiment tracking (optional)
+accelerate>=0.20.0    # For distributed training (optional)
+flask>=2.3.0          # For inference API server
+
 # Optional: for CUDA support
 # jaxlib==0.4.13+cuda11.cudnn86  # Install with: pip install --upgrade "jax[cuda11_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
