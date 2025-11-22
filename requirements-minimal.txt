@@ -1,0 +1,12 @@
+# Minimal requirements for running the Ising playground
+numpy>=1.24.0
+streamlit>=1.25.0
+plotly>=5.14.0
+scipy>=1.10.0
+
+# JAX - core for simulation
+jax>=0.4.0
+jaxlib>=0.4.0
+
+# Optional: PyTorch (install separately if needed)
+# torch>=2.0.0
