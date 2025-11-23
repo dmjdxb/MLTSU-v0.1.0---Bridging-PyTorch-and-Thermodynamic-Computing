@@ -15,7 +15,6 @@
 - Energy advantages are **theoretical**: Real hardware shows ~10-100× improvement, not 1000×
 - This is a **research prototype**: Not validated for clinical use
 - Performance claims based on **simulations**: Actual TSU hardware may differ significantly
-- See [SCIENTIFIC_ASSESSMENT.md](docs/SCIENTIFIC_ASSESSMENT.md) for rigorous analysis
 
 MLTSU bridges PyTorch deep learning with thermodynamic hardware, featuring **TinyBioBERT** - an experimental medical NLP model with P-bit attention, progressive training, and clinical safety wrappers.
 
@@ -361,19 +360,6 @@ See [Energy Accounting](mltsu/energy/realistic_accounting.py) for detailed break
 - Mixing time can be exponential below critical temperature
 - Requires importance sampling for proper statistics
 - See [Physics Validation](tests/test_physics_validation.py) for details
-
-## 📖 Documentation
-
-### Core Documentation
-- [Architecture Overview](docs/architecture.md)
-- [API Reference](docs/api.md)
-- [Hardware Integration Guide](docs/hardware.md)
-- [Energy-Based Models Tutorial](docs/ebm_tutorial.md)
-
-### Recent Improvements
-- [Reproducibility Fix](docs/REPRODUCIBILITY_FIX.md) - How we fixed the seed issue
-- [Polish Improvements](docs/POLISH_IMPROVEMENTS.md) - v0.1.0 enhancements
-- [Scientific Assessment](docs/SCIENTIFIC_ASSESSMENT.md) - Rigorous analysis
 
 ## 🤝 Contributing
 
